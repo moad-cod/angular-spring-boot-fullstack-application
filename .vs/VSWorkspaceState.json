@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backend",
+    "\\backend\\src",
+    "\\backend\\src\\main",
+    "\\backend\\src\\main\\java",
+    "\\backend\\src\\main\\java\\com",
+    "\\backend\\src\\main\\java\\com\\FullStack",
+    "\\backend\\src\\main\\java\\com\\FullStack\\demoFullStack",
+    "\\backend\\src\\main\\java\\com\\FullStack\\demoFullStack\\Entity"
+  ],
+  "SelectedNode": "\\backend\\src\\main\\java\\com\\FullStack\\demoFullStack\\DemoFullStackApplication.java",
+  "PreviewInSolutionExplorer": false
+}
