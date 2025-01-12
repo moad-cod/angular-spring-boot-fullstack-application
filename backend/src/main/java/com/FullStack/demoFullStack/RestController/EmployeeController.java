@@ -3,6 +3,7 @@ package com.FullStack.demoFullStack.RestController;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,5 +55,16 @@ public class EmployeeController {
         employee.setEmailId(employeeDetails.getEmailId()); // update employee
         Employee updatedEmployee = employeeRepository.save(employee); // save employee
         return ResponseEntity.ok(updatedEmployee); // return 200
+    }
+
+    // delete employee rest api
+    @DeleteMapping("/employees/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id) {
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id:" + id)); // return 404
+        employeeRepository.delete(employee);
+        Map<String, Boolean> response = new HashMap<>(); // return 200 hash mapping for boolean value
+        response.put("deleted", Boolean.TRUE); // return delete true when deleted
+        return ResponseEntity.ok(response);
     }
 }
